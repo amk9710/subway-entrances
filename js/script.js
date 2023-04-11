@@ -18,7 +18,7 @@ $(document).ready(function () {
                 return {
                     name: entrance.name,
                     latitude: entrance.the_geom.coordinates[1],
-                    longitude: entrance.the_geom.coordinates[0], 
+                    longitude: entrance.the_geom.coordinates[0],
                     line: entrance.line
                 };
             });
@@ -28,7 +28,10 @@ $(document).ready(function () {
                 // Check if the latitude and longitude values are valid numbers
                 if (!isNaN(data.latitude) && !isNaN(data.longitude)) {
                     // Create a marker
-                    var marker = new mapboxgl.Marker()
+                    var marker = new mapboxgl.Marker({
+                        color: "rgb(255, 255, 153)",
+                        size: 'small'
+                })
                         .setLngLat([data.longitude, data.latitude])
                         .setPopup(new mapboxgl.Popup().setHTML("<h3>" + data.name + "</h3><p><strong>Line: </strong>" + data.line + "</p>"))
                         .addTo(map);
@@ -45,7 +48,7 @@ $(document).ready(function () {
     mapboxgl.accessToken = "pk.eyJ1IjoiYW1rOTcxMCIsImEiOiJjbGc1cWRtNTIwNWl0M2VuNW9yZTJxYmJ2In0.BR49nDMsJOC3F0VxtVqT9Q";
     var map = new mapboxgl.Map({
         container: 'map',
-        style: 'mapbox://styles/mapbox/light-v10',
+        style: 'mapbox://styles/mapbox/dark-v11',
         center: [-73.972637, 40.676602],
         zoom: 11
     });
