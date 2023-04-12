@@ -33,7 +33,7 @@ $(document).ready(function () {
                         size: 'small'
                 })
                         .setLngLat([data.longitude, data.latitude])
-                        .setPopup(new mapboxgl.Popup().setHTML("<h3>" + data.line + "</h3><p><strong>Line: </strong>" + data.name + "</p>"))
+                        .setPopup(new mapboxgl.Popup().setHTML("<h3><p><strong>Line: </strong>" + data.line + "</h3>" + data.name + "</p>"))
                         .addTo(map);
                 }
             });
