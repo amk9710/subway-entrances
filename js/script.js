@@ -29,11 +29,11 @@ $(document).ready(function () {
                 if (!isNaN(data.latitude) && !isNaN(data.longitude)) {
                     // Create a marker
                     var marker = new mapboxgl.Marker({
-                        color: "rgb(255, 255, 153)",
+                        color: "#fbb03b",
                         size: 'small'
                 })
                         .setLngLat([data.longitude, data.latitude])
-                        .setPopup(new mapboxgl.Popup().setHTML("<h3>" + data.name + "</h3><p><strong>Line: </strong>" + data.line + "</p>"))
+                        .setPopup(new mapboxgl.Popup().setHTML("<h3>" + data.line + "</h3><p><strong>Line: </strong>" + data.name + "</p>"))
                         .addTo(map);
                 }
             });
